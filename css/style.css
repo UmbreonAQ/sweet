@@ -107,7 +107,7 @@ body {
 	-webkit-border-radius:4px;
 }
 .roundabout-moveable-item img{
-	width:100%;
+	max-width: 100%;
 }
 .roundabout-in-focus {
 	border:3px solid rgba(0, 0, 0, 0.2);
