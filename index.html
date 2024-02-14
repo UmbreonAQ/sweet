@@ -65,7 +65,7 @@ Just stay here in this moment<br>
 And I hope this works out<br>
 	
 <br>
-(手机打开的话,屏幕向右边滑滑→)<br>
+(屏幕向右边滑滑→)<br>
 (点击图片切换下一张)<br>
 -----------------------Just for You, XT Lian<br>		
 </div>	
@@ -92,31 +92,7 @@ writeContent(true);
 <li><img src="images/9.jpg" alt=""></li>
 </ul>		
 </div>		
-<!-- 在body标签内添加一个按钮 -->
-<button onclick="showPopup()">点击这里</button>
 
-<!-- 在body标签内添加弹出窗口的容器 -->
-<div id="popup" style="display: none;">
-    小连情人节快乐！
-</div>
-
-<!-- 在JavaScript中定义显示弹出窗口的函数 -->
-<script type="text/javascript">
-    function showPopup() {
-        // 获取弹出窗口的容器
-        var popup = document.getElementById("popup");
-        
-        // 设置弹出窗口可见
-        popup.style.display = "block";
-        
-        // 确保点击其他地方也可以关闭弹出窗口
-        window.onclick = function(event) {
-            if (event.target == popup) {
-                popup.style.display = "none";
-            }
-        }
-    }
-</script>
 
 <script type="text/javascript">			
 setTimeout(move, 3000);		
@@ -139,5 +115,37 @@ setTimeout("showTime()", 4000);
 
 <div id="footer">			 
 <embed src="" loop="true" width="0px" height="0px" hidden="false"></embed> <a href="/"</a> 		
+<!-- 在body标签内添加一个按钮 -->
+<button id="popupButton">点击这里</button>
+
+<!-- 在body标签内添加弹出窗口的容器 -->
+<div id="popup" style="display: none;">
+    小连情人节快乐！
+</div>
+
+<!-- 在JavaScript中定义显示弹出窗口的函数 -->
+<script type="text/javascript">
+    // 等待DOM加载完毕
+    document.addEventListener("DOMContentLoaded", function() {
+        // 获取按钮和弹出窗口的引用
+        var button = document.getElementById("popupButton");
+        var popup = document.getElementById("popup");
+        
+        // 定义显示弹出窗口的函数
+        function showPopup() {
+            popup.style.display = "block";
+        }
+
+        // 为按钮添加点击事件监听器，点击时显示弹出窗口
+        button.addEventListener("click", showPopup);
+
+        // 点击其他地方时关闭弹出窗口
+        window.addEventListener("click", function(event) {
+            if (event.target !== button && event.target !== popup) {
+                popup.style.display = "none";
+            }
+        });
+    });
+</script>
 
 </div>	</body></html>
