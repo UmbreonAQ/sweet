@@ -92,6 +92,31 @@ writeContent(true);
 <li><img src="images/9.jpg" alt=""></li>
 </ul>		
 </div>		
+<!-- 在body标签内添加一个按钮 -->
+<button onclick="showPopup()">点击这里</button>
+
+<!-- 在body标签内添加弹出窗口的容器 -->
+<div id="popup" style="display: none;">
+    小连情人节快乐！
+</div>
+
+<!-- 在JavaScript中定义显示弹出窗口的函数 -->
+<script type="text/javascript">
+    function showPopup() {
+        // 获取弹出窗口的容器
+        var popup = document.getElementById("popup");
+        
+        // 设置弹出窗口可见
+        popup.style.display = "block";
+        
+        // 确保点击其他地方也可以关闭弹出窗口
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    }
+</script>
 
 <script type="text/javascript">			
 setTimeout(move, 3000);		
