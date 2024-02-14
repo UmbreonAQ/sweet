@@ -123,29 +123,4 @@ setTimeout("showTime()", 4000);
     小连情人节快乐！
 </div>
 
-<!-- 在JavaScript中定义显示弹出窗口的函数 -->
-<script type="text/javascript">
-    // 等待DOM加载完毕
-    document.addEventListener("DOMContentLoaded", function() {
-        // 获取按钮和弹出窗口的引用
-        var button = document.getElementById("popupButton");
-        var popup = document.getElementById("popup");
-        
-        // 定义显示弹出窗口的函数
-        function showPopup() {
-            popup.style.display = "block";
-        }
-
-        // 为按钮添加点击事件监听器，点击时显示弹出窗口
-        button.addEventListener("click", showPopup);
-
-        // 点击其他地方时关闭弹出窗口
-        window.addEventListener("click", function(event) {
-            if (event.target !== button && event.target !== popup) {
-                popup.style.display = "none";
-            }
-        });
-    });
-</script>
-
 </div>	</body></html>
